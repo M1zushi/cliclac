@@ -4,15 +4,16 @@ import math
 on = 0
 
 while on == 0:
-    print'\n\nOptions:'
-    print ' 1. Add'
-    print ' 2. Subtract'
-    print ' 3. Multiply'
-    print ' 4. Divide'
+    print ('\n\nOptions:')
+    print (' 1. Add')
+    print (' 2. Subtract')
+    print (' 3. Multiply')
+    print (' 4. Divide')
+    print (' 5. Exponent')
     # Temporarily there will only be the basic 4 operators
-    print ' 0. Off'
+    print (' 0. Off')
 
-    op = input('\nOperation(Num 0-4): ')
+    op = input('\nOperation(Num 0-5): ')
 
     if op == 1:
         num1 = int(input('First Value: '))
@@ -34,6 +35,15 @@ while on == 0:
         num1 = int(input('First Value: '))
         num2 = int(input('Second Value: '))
         print('\n\n{} / {} = {}').format(num1, num2, num1 / num2)
+
+    elif op == 5:
+        num1 = int(input('Base: '))
+        num2 = int(input('Power: '))
+        temp = num1
+        while num2 > 0:
+            num1 = temp * num1
+            num2 -= 1
+        print('\n\n{} ^ {} = {}').format(temp, num2, num1 )
 
     elif op == 0:
         print('\nO F F')
